@@ -1,9 +1,9 @@
 import { IntroDetails } from "./Components/IntroDetails";
 import { ProductCatalog } from "./Components/ProductCatalog";
-
+import ProductCatalogClass from "./Components/ClassComponent";
 export const App=(props)=>{
   return(
-      <div>
+      /*<div>
         <IntroDetails intro={{cName:"Amazon", GstNo:"xya678"}}></IntroDetails>
         <ProductCatalog
           details={{
@@ -18,5 +18,9 @@ export const App=(props)=>{
                 price:"1200"
             }}></ProductCatalog>
       </div>
+      */
+    <div>
+      <ProductCatalogClass ></ProductCatalogClass>
+    </div>
   )
 }
