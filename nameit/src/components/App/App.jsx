@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBox from "../SearchBox/SearchBox";
 import Header from './../Header/Header'
 import './App.css';
 
@@ -8,21 +9,30 @@ class App extends React.Component {
 
     //old method of state 
 
-    // constructor(){
-    //     super();
+    constructor(){
+        super();
 
-    //     this.state = {
-    //         headerText: "Name It!";
-    //     }
+        this.state = {
+            headerText: "Name It!",
+            headerExpanded: true
+        };
+    }
+    // state = {
+    //     headerText: 'Name It!',
     // }
-    state = {
-        headerText: 'Name It!',
+
+    handleInputChange = (inputText) => {
+        this.setState( { headerExpanded: !inputText });
     }
 
     render() {
         return (
             <div>
-                <Header headTitle={this.state.headerText} />
+                <Header 
+                    headerExpanded={this.state.headerExpanded}
+                    headTitle={this.state.headerText} />
+                <SearchBox onInputChange={this.handleInputChange} />
+                
                 {/* <h3>{this.state.headerText}</h3>
                 <button onClick={
                     () => {
